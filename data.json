@@ -1,0 +1,80 @@
+[
+  {
+    "model": "person.projects",
+    "id": 1,
+    "fields": {
+      "image": "projects/Screenshot_from_2022-09-07_11-16-50.png",
+      "link": "https://preview.colorlib.com/theme/readit/",
+      "profession": "WEB DESIGN",
+      "category": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "person.projects",
+    "id": 2,
+    "fields": {
+      "image": "projects/Screenshot_from_2022-09-07_11-17-53.png",
+      "link": "https://preview.colorlib.com/theme/andrea/",
+      "profession": "WEB DEVELOPER",
+      "category": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "person.projects",
+    "id": 3,
+    "fields": {
+      "image": "projects/Screenshot_from_2022-09-07_11-19-21.png",
+      "link": "https://myeng.uz/",
+      "profession": "BRANDING",
+      "category": [
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "model": "person.projects",
+    "id": 4,
+    "fields": {
+      "image": "projects/Screenshot_from_2022-09-07_11-20-27.png",
+      "link": "https://preview.colorlib.com/theme/ogani/",
+      "profession": "APP DEVELOPING",
+      "category": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "person.projects",
+    "id": 5,
+    "fields": {
+      "image": "projects/Screenshot_from_2022-09-07_11-21-13.png",
+      "link": "https://preview.colorlib.com/theme/malefashion/",
+      "profession": "PHTOGRAPHY",
+      "category": [
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "model": "person.projects",
+    "id": 6,
+    "fields": {
+      "image": "projects/Screenshot_from_2022-09-07_11-38-58.png",
+      "link": "https://preview.colorlib.com/theme/moose/",
+      "profession": "BUSINESS STRATEGY",
+      "category": [
+        2,
+        3
+      ]
+    }
+  }
+]

@@ -1,0 +1,392 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-wrap js-fullheight" id="home-section">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+                <div class="text text-center">
+                    <span class="subheading">Hey! I am</span>
+                    <h1>Xolmatov Dilshod</h1>
+                    <h2>I'm a
+                        <span class="txt-rotate" data-period="2000"
+                              data-rotate='[ "Web Developer.", "Teacher.", "Student.", "Blogger" ]'></span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="mouse">
+        <a href="#" class="mouse-icon">
+            <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+        </a>
+    </div>
+</section>
+<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    <div class="container">
+        {% for about in abouts %}
+            <div class="row d-flex no-gutters">
+            <div class="col-md-6 col-lg-6 d-flex">
+                <div class="img-about img d-flex align-items-stretch">
+                    <div class="overlay"></div>
+                    <div class="img d-flex align-self-stretch align-items-center"
+                         style="background-image:url({{ about.image.url }})">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 pl-md-5 py-5">
+                <div class="row justify-content-start pb-3">
+                    <div class="col-md-12 heading-section ftco-animate">
+                        <h1 class="big">About</h1>
+                        <h2 class="mb-4">About Me</h2>
+                        <p>{{ about.bio }}</p>
+                        <ul class="about-info mt-4 px-md-0 px-2">
+                            <li class="d-flex"><span>Name:</span> <span>{{ about.name }}</span></li>
+                            <li class="d-flex"><span>Date of birth:</span> <span>{{ about.birthday }}</span></li>
+                            <li class="d-flex"><span>Address:</span> <span>{{ about.address }}</span></li>
+                            <li class="d-flex"><span>Zip code:</span> <span>{{ about.zip_code }}</span></li>
+                            <li class="d-flex"><span>Email:</span> <span>{{ about.email }}</span>
+                            </li>
+                            <li class="d-flex"><span>Phone: </span> <span>{{ about.phone}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                    <div class="text">
+                        <p class="mb-4">
+                            <span class="number" data-number="{{ about.projects }}">0</span>
+                            <span>Project complete</span>
+                        </p>
+                        <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="ftco-section ftco-partner">
+    <div class="container">
+        <div class="row">
+            {% for partner in partners %}
+                <div class="col-sm ftco-animate">
+                    <a class="partner"><img src="{{ partner.image.url }}" class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <nav id="navi">
+                    <ul>
+                        {% for resume in resumes %}
+                            <li><a href="#page-{{ forloop.counter }}">{{ resume.type }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                {% for resume in resumes %}
+                    {% if not resume.is_skill %}
+                        <div id="page-{{ forloop.counter }}" class="page one">
+                            <h2 class="heading">{{ resume.type }}</h2>
+                            {% for i in resume.additionalinfo_set.all %}
+                                <div class="resume-wrap d-flex ftco-animate">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="flaticon-{{ i.icon }}"></span>
+                                    </div>
+                                    <div class="text pl-3">
+                                        <span class="date">{{ i.start_finish }}</span>
+                                        <h2>{{ i.profession }}</h2>
+                                        <span class="position">{{ i.academy }}</span>
+                                        <p>{{ i.content }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div id="page-{{ forloop.counter }}" class="page three">
+                            <h2 class="heading">{{ resume.type }}</h2>
+                                <div class="row progress-circle mb-5">
+                                    {% for i in resume.additionalinfo_set.all %}
+                                        {% if i.is_main %}
+                                            <div class="col-lg-4 mb-4">
+                                        <div class="bg-white rounded-lg shadow p-4">
+                                            <h2 class="h5 font-weight-bold text-center mb-4">{{ i.name }}</h2>
+                                            <div class="progress mx-auto" data-value='{{ i.percent }}'>
+                                                <span class="progress-left">
+                                                    <span class="progress-bar border-primary"></span>
+                                                </span>
+                                                <span class="progress-right">
+                                                    <span class="progress-bar border-primary"></span>
+                                                </span>
+                                                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                                    <div class="h2 font-weight-bold">{{ i.percent }}<sup class="small">%</sup></div>
+                                                </div>
+                                            </div>
+                                            <div class="row text-center mt-4">
+                                                <div class="col-6 border-right">
+                                                    <div class="h4 font-weight-bold mb-0">{{ i.last_week }}%</div>
+                                                    <span class="small text-gray">Last week</span>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="h4 font-weight-bold mb-0">{{ i.last_month }}%</div>
+                                                    <span class="small text-gray">Last month</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="row">
+                                    {% for i in resume.additionalinfo_set.all %}
+                                        {% if not i.is_main %}
+                                            <div class="col-md-6 animate-box">
+                                                <div class="progress-wrap ftco-animate">
+                                                    <h3>{{ i.name }}</h3>
+                                                    <div class="progress">
+                                                        <div class="progress-bar color-1" role="progressbar" aria-valuenow="{{ i.percent }}"
+                                                            aria-valuemin="0" aria-valuemax="100" style="width:{{ i.percent }}%">
+                                                            <span>{{ i.percent }}%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section" id="services-section">
+    <div class="container-fluid px-md-5">
+        <div class="row justify-content-center py-5 mt-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Services</h1>
+                <h2 class="mb-4">Services</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for service in services %}
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                <a href="#" class="services-1 shadow">
+                    <span class="icon">
+                        <i class="flaticon-{{ service.icon }}"></i>
+                    </span>
+                    <div class="desc">
+                        <h3 class="mb-5">{{ service.profession }}</h3>
+                        <p>{{ service.content }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-project" id="projects-section">
+    <div class="container-fluid px-md-0">
+        <div class="row no-gutters justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Projects</h1>
+                <h2 class="mb-4">Our Projects</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            {% for project in projects %}
+                <div class="col-md-4">
+                <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+                     style="background-image:url({{ project.image.url }})">
+                    <div class="overlay"></div>
+                    <div class="text text-center p-4">
+                        <h3><a href="{{ project.link }}">{{ project.category.first }} &amp; {{ project.category.last }}</a></h3>
+                        <span>{{ project.profession }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+    <div class="container-fluid px-md-5">
+        <div class="row d-md-flex align-items-center">
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 shadow">
+                    <div class="text">
+                        <strong class="number" data-number="100">0</strong>
+                        <span>Awards</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 shadow">
+                    <div class="text">
+                        <strong class="number" data-number="1200">0</strong>
+                        <span>Complete Projects</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 shadow">
+                    <div class="text">
+                        <strong class="number" data-number="1200">0</strong>
+                        <span>Happy Customers</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 shadow">
+                    <div class="text">
+                        <strong class="number" data-number="1200">0</strong>
+                        <span>Cups of coffee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section" id="blog-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Blog</h1>
+                <h2 class="mb-4">Our Blog</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            </div>
+        </div>
+        <div class="row d-flex">
+            {% for post in posts %}
+                <div class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry justify-content-end">
+                    <a href="{% url 'post:blog-single' post.id %}" class="block-20"
+                       style="background-image:url({{ post.image.url }})">
+                    </a>
+                    <div class="text mt-3 float-right d-block">
+                        <h3 class="heading"><a href="{% url 'post:blog-single' post.id %}">{{ post.title|slice:'100' }}</a>
+                        </h3>
+                        <div class="d-flex align-items-center mb-3 meta">
+                            <p class="mb-0">
+                                <span class="mr-2">{{ post.created_at }}</span>
+                                <a class="mr-2">{{ post.author }}</a>
+                                <a class="meta-chat"><span class="icon-chat"></span> {{ post.comment_set.count }}</a>
+                            </p>
+                        </div>
+                        <p>{{ post.content|slice:'150' }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-hireme img"
+         style="background-image:url(images/xbg_1.jpg.pagespeed.ic.snCMAsuwMa.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 ftco-animate text-center">
+                <h2>I'm <span>Available</span> for freelancing</h2>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Contact</h1>
+                <h2 class="mb-4">Contact Me</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            </div>
+        </div>
+        <div class="row d-flex contact-info mb-5">
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 shadow">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-map-signs"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Address</h3>
+                        <p>Krasnagorsk Oydin 49-29, Tashkent, Uzbekistan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 shadow">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-phone2"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Contact Number</h3>
+                        <p><a href="tel://998930901916">+998 93 090 19 16</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 shadow">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-paper-plane"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Email Address</h3>
+                        <p><span>seferonxkiller<br>@gmail.com</br></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 shadow">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-globe"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Website</h3>
+                        <p><a href="https://isystem.uz">isystem.uz</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters block-9">
+            <div class="col-md-6 order-md-last d-flex">
+                <form method="post" class="bg-light p-4 p-md-5 contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.name }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.subject }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.message }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 d-flex">
+                <div class="img" style="background-image:url({% static 'images/ozim1.jpg' %})"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

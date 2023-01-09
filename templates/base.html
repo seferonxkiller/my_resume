@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Xolmatov Dilshod Olim o'g'li</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet"
+          href="{% static 'css/A.open-iconic-bootstrap.min.css+animate.css+owl.carousel.min.css+owl.theme.default.min.css+magnific-popup.css+aos.css+ionicons.min.css+flaticon.css+icomoon.css+style.css,Mcc.03G1SaxbUZ.css' %}"/>
+    <script nonce="406884c1-3e1a-4b67-ab69-d099fd88b46a">(function (w, d) {
+        !function (a, e, t, r) {
+            a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zaraz = {deferred: []}, a.zaraz.q = [], a.zaraz._f = function (e) {
+                return function () {
+                    var t = Array.prototype.slice.call(arguments);
+                    a.zaraz.q.push({m: e, a: t})
+                }
+            };
+            for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e);
+            a.addEventListener("DOMContentLoaded", (() => {
+                var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0];
+                for (n && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.x = Math.random(), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(), a.zarazData.q = []; a.zaraz.q.length;) {
+                    const e = a.zaraz.q.shift();
+                    a.zarazData.q.push(e)
+                }
+                z.defer = !0;
+                for (const e of [localStorage, sessionStorage]) Object.keys(e).filter((a => a.startsWith("_zaraz_"))).forEach((t => {
+                    try {
+                        a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t))
+                    } catch {
+                        a.zarazData["z_" + t.slice(7)] = e.getItem(t)
+                    }
+                }));
+                z.referrerPolicy = "origin", z.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t)
+            }))
+        }(w, d, 0, "script");
+    })(window, document);</script>
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/#about-section"><span>D</span>ilshod</a>
+        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav nav ml-auto">
+                <li class="nav-item"><a href="/#home-section" class="nav-link"><span>Home</span></a></li>
+                <li class="nav-item"><a href="/#about-section" class="nav-link"><span>About</span></a></li>
+                <li class="nav-item"><a href="/#resume-section" class="nav-link"><span>Resume</span></a></li>
+                <li class="nav-item"><a href="/#services-section" class="nav-link"><span>Services</span></a></li>
+                <li class="nav-item"><a href="/#projects-section" class="nav-link"><span>Projects</span></a></li>
+                <li class="nav-item"><a href="/#blog-section" class="nav-link"><span>My Blog</span></a></li>
+                <li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+<footer class="ftco-footer ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">About</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                        live the blind texts.</p>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="https://t.me/Muhammad_Rauf404"><span class="icon-telegram"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/python_beckend_dev/"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                        <li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                        <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+                        <li><a href="#projects-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+                        <li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Services</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
+                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
+                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
+                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">Krasnagorsk Oydin 49-29, Tashkent, Uzbekistan</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span
+                                    class="text">+998 93 090 19 16</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text"><span>seferonxkiller@gmail.com</span></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    Copyright by <a
+                        href="https://t.me/Muhammad_Rauf404" target="_blank">Dilshod</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js+popper.min.js+bootstrap.min.js.pagespeed.jc.bMyveoHKiv.js' %}"></script>
+<script>eval(mod_pagespeed_gb7yraQys5);</script>
+<script>eval(mod_pagespeed_RGKn6SW32g);</script>
+<script>eval(mod_pagespeed_h9rX52Z4Ti);</script>
+<script src="{% static 'js/jquery.easing.1.3.js+jquery.waypoints.min.js+jquery.stellar.min.js+owl.carousel.min.js.pagespeed.jc.P2hE5bOhqO.js' %}"></script>
+<script>eval(mod_pagespeed_rBeIzFEDC0);</script>
+<script>eval(mod_pagespeed_m_l$l00rWq);</script>
+<script>eval(mod_pagespeed_tOGOF_KHft);</script>
+<script>eval(mod_pagespeed_g921z9MGXC);</script>
+<script src="{% static 'js/jquery.magnific-popup.min.js+aos.js+jquery.animateNumber.min.js+scrollax.min.js+main.js.pagespeed.jc.GTDEZB3xMJ.js' %}"></script>
+<script>eval(mod_pagespeed_P9B3uJNt60);</script>
+<script>eval(mod_pagespeed_ACE0ce7fTR);</script>
+<script>eval(mod_pagespeed_awRnuKerVJ);</script>
+<script>eval(mod_pagespeed_iVOyfib5U4);</script>
+<script>eval(mod_pagespeed_udwuFYXF0f);</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+        integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+        data-cf-beacon='{"rayId":"7174f0524bfb1239","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}'
+        crossorigin="anonymous"></script>
+</body>
+</html>
